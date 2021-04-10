@@ -7,6 +7,7 @@ jobs:
       - image: alpine:latest
     steps:
       - checkout
+      - run: apk add --update curl
       - run:
           name: Website check
           command: |
