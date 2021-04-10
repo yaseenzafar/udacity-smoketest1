@@ -10,11 +10,12 @@ jobs:
       - run:
           name: Website check
           command: |
-            if curl -s --head "https://google.com"
+            URL="https://google.com"
+            if curl -s --head ${URL}
             then
-              echo "It worked"
+              return 0
             else
-              echo "It failed"
+              return 1
             fi
       
 workflows:
